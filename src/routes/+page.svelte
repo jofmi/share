@@ -17,14 +17,13 @@
 		await goto(path);
 		loading = false;
 	};
-
-	console.log('Results', data);
 </script>
 
 <div id="organization-ui" class="flex flex-row gap-5">
 	<div class="w-52">
 		<Input bind:value={searchValue}></Input>
 		<Button on:click={() => updateSearch()}>Search</Button>
+		<Button on:click={() => goto('/new')}>New</Button>
 	</div>
 	<div class="flex flex-grow flex-col">
 		Search value: {data.searchValue}
