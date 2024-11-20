@@ -8,7 +8,7 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"push": "drizzle-kit push",
+		"pushdb": "drizzle-kit push",
 		"studio": "drizzle-kit studio",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
@@ -43,6 +43,8 @@
 		"vitest": "^2.0.4"
 	},
 	"dependencies": {
+		"@oslojs/crypto": "^1.0.1",
+		"@oslojs/encoding": "^1.1.0",
 		"drizzle-orm": "^0.33.0",
 		"postgres": "^3.4.4"
 	}
