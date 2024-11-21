@@ -1,6 +1,6 @@
 import { db } from '$lib/server/db';
 import { itemTable } from '$lib/server/db/schema';
-import { ilike } from 'drizzle-orm';
+import { eq, ilike } from 'drizzle-orm';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ url }) => {
@@ -14,4 +14,17 @@ export const load: PageServerLoad = async ({ url }) => {
 		items: result,
 		searchValue: searchValue
 	};
+};
+
+export const actions = {
+	removeItem: async ({ request }) => {
+		const data = await request.formData();
+		const id = data.get('id');
+
+		if (!id) {
+			return { status: 400, body: { message: 'No id provided' } };
+		}
+
+		await db.delete(itemTable).where(eq(itemTable.id, Number(id)));
+	}
 };

@@ -33,13 +33,17 @@
 	<div class="flex flex-grow flex-col border-2 border-black">
 		<div class="flex flex-row gap-5 px-2 py-1 font-bold border-b-2 border-black">
 			<div class="w-12">ID</div>
-			<div class="w-52">Name</div>
+			<div class="grow">Name</div>
 		</div>
 		{#if data.items && data.items.length > 0}
 			{#each data.items as result}
 				<div class="flex flex-row gap-5 px-2 py-1">
 					<div class="w-12">{result.id}</div>
-					<div class="w-52">{result.name}</div>
+					<div class="grow">{result.name}</div>
+					<form method="post" action="?/removeItem">
+						<input type="hidden" name="id" value={result.id} />
+						<button type="submit">Delete</button>
+					</form>
 				</div>
 			{/each}
 		{:else}
