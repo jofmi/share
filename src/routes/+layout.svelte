@@ -11,7 +11,7 @@
 			<div><a href="/login">Login</a></div>
 		</div>
 	</header>
-	<div id="page" class="p-1">
+	<div id="page" class="">
 		{@render children()}
 	</div>
 </div>
