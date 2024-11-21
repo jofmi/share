@@ -5,6 +5,7 @@ Prototype for a sharing plattform.
 ## Tech Stack
 
 - JS Framework https://svelte.dev/
+- UI Library https://www.shadcn-svelte.com/
 - DB https://www.postgresql.org/
 - ORM https://orm.drizzle.team/
 - Auth https://lucia-auth.com/ & https://arcticjs.dev/ (support OAuth & KeyCloak)
