@@ -1,10 +1,20 @@
 services:
-  db:
-    image: postgres
-    restart: always
+  share-db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    volumes:
+      - share-db-data:/var/lib/postgresql/data
     ports:
       - 5432:5432
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: mysecretpassword
-      POSTGRES_DB: local
+      POSTGRES_DB: share-db
+    healthcheck:
+      interval: 10s
+      retries: 10
+      test: 'pg_isready -U "$$POSTGRES_USER" -d "$$POSTGRES_DB"'
+      timeout: 2s
+
+volumes:
+  share-db-data: {}
