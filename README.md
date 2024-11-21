@@ -11,7 +11,8 @@ Prototype for a sharing plattform.
 - Auth https://lucia-auth.com/ & https://arcticjs.dev/ (support OAuth & KeyCloak)
 - Search engine https://typesense.org/ (WIP)
 - File storage https://min.io/ (WIP)
-- Deployment https://coolify.io/
+- Datatables https://vincjo.fr/datatables (WIP)
+- Deployment https://coolify.io/ (WIP)
 
 ## Developing
 
