@@ -30,17 +30,20 @@
 			Add new article
 		</Button>
 	</div>
-	<div class="flex flex-grow flex-col">
-		{#if data.items}
+	<div class="flex flex-grow flex-col border-2 border-black">
+		<div class="flex flex-row gap-5 px-2 py-1 font-bold border-b-2 border-black">
+			<div class="w-12">ID</div>
+			<div class="w-52">Name</div>
+		</div>
+		{#if data.items && data.items.length > 0}
 			{#each data.items as result}
-				<div class="flex flex-row gap-5 border-black border p-1">
-					<div class="w-52">{result.id}</div>
+				<div class="flex flex-row gap-5 px-2 py-1">
+					<div class="w-12">{result.id}</div>
 					<div class="w-52">{result.name}</div>
-					<div class="w-52">{result.status}</div>
 				</div>
 			{/each}
 		{:else}
-			<div>No results found</div>
+			<div class="p-1">No results found</div>
 		{/if}
 	</div>
 </div>
